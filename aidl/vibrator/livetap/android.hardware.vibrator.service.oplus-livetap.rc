@@ -4,14 +4,15 @@
 #
 
 on boot
-    chown system system /dev/awinic_haptic
-    chmod 0600 /dev/awinic_haptic
-    chown system system /proc/vibrator/touch_style
-    chmod 0660 /proc/vibrator/touch_style
-    write /proc/vibrator/touch_style 0
-
-on property:persist.vendor.vibrator.touch_style=*
-    write /proc/vibrator/touch_style ${persist.vendor.vibrator.touch_style}
+    chown system system /sys/class/leds/vibrator/duration
+    chmod 0660 /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/oplus_duration
+    chmod 0660 /sys/class/leds/vibrator/oplus_duration
+    chown system system /sys/class/leds/vibrator/activate
+    chmod 0660 /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/oplus_activate
+    chmod 0660 /sys/class/leds/vibrator/oplus_activate
+    chown system system /sys/class/leds/vibrator/vmax
 
 on property:persist.sys.vibrator.touch_style=*
     write /proc/vibrator/touch_style ${persist.sys.vibrator.touch_style}

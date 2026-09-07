@@ -15,4 +15,3 @@ system_vendor_config_prop(system_oplus_project_prop)
 
 # Vibrator
 system_public_prop(system_oplus_vibrator_prop)
-
